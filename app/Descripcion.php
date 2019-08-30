@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Descripcion extends Model
 {
     protected $table = 'descripciones';
+
+    protected $fillable = ['descripcion'];
 }

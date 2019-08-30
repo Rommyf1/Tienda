@@ -16,6 +16,7 @@ class CreateStocksTable extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->string('id_stock')->unique()->nullable(false)->primary();
             $table->integer('stock')->unsigned()->nullable(false);
+            $table->foreign('id_producto_stock')->references('id_prod')->on('productos')->onDelete('cascade');
             $table->timestamps();
         });
     }

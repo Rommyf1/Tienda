@@ -18,6 +18,7 @@ class CreateSeguridadUsuariosTable extends Migration
             $table->string('contrasena')->nullable(false);
             $table->string('shalt')->nullable(false)->unique();
             $table->boolean('persistencia')->default(false);
+            $table->foreign('id_usuario_seguridad')->references('id_cl')->on('usuarios')->onDelete('cascade');
             $table->timestamps();
         });
     }

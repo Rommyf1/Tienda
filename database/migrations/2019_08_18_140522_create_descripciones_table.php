@@ -16,6 +16,7 @@ class CreateDescripcionesTable extends Migration
         Schema::create('descripciones', function (Blueprint $table) {
             $table->string('id_detalle')->unique()->nullable(false)->primary();
             $table->text('descripcion')->nullable(false);
+            $table->foreign('id_producto_descripcion')->references('id_prod')->on('productos')->onDelete('cascade');
             $table->timestamps();
         });
     }

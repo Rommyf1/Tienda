@@ -17,12 +17,6 @@ class CreateUsuariosTable extends Migration
             $table->string('id_cl')->unique()->primary()->nullable(false);
             $table->string('nombre_cl',60)->nullable(false);
             $table->string('apellido_cl',60)->nullable(false);
-            $table->string('contacto_id');
-            $table->foreign('contacto_id')->references('id_contacto')->on('contacto_usuarios');
-            $table->string('seguridad_id');
-            $table->foreign('seguridad_id')->references('id_seguridad')->on('seguridad_usuarios');
-            $table->string('avatar_id');
-            $table->foreign('avatar_id')->references('id_avatar')->on('avatar_usuarios');
             $table->timestamps();
         });
     }

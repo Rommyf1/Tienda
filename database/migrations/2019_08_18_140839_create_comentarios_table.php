@@ -17,8 +17,8 @@ class CreateComentariosTable extends Migration
             $table->string('id_comentario')->unique()->nullable(false)->primary();
             $table->text('comentario')->nullable(false);
             $table->timestamp('fecha_comentario');
-            $table->string('id_producto');
-            $table->foreign('id_producto')->references('id_prod')->on('productos');
+            $table->string('id_producto_comentario');
+            $table->foreign('id_producto_comentario')->references('id_prod')->on('productos')->onDelete('cascade');
             $table->timestamps();
         });
     }

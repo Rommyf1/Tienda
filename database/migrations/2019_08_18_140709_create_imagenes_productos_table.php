@@ -17,8 +17,7 @@ class CreateImagenesProductosTable extends Migration
             $table->string('id_imagen')->unique()->nullable(false)->primary();
             $table->binary('imagen');
             $table->string('detalle')->nullable(false);
-            $table->string('producto_id');
-            $table->foreign('producto_id')->references('id_prod')->on('productos');
+            $table->foreign('id_producto_imagen')->references('id_prod')->on('productos')->onDelete('cascade');
             $table->timestamps();
         });
     }

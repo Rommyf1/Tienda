@@ -16,6 +16,7 @@ class CreateCategoriasTable extends Migration
         Schema::create('categorias', function (Blueprint $table) {
             $table->string('id_cat')->unique()->nullable(false)->primary();
             $table->string('categoria')->unique()->nullable(false);
+            $table->foreign('id_producto_categoria')->references('id_prod')->on('productos')->onDelete('cascade');
             $table->timestamps();
         });
     }

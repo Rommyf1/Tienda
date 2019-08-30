@@ -16,6 +16,7 @@ class CreatePrecioProductosTable extends Migration
         Schema::create('precio_productos', function (Blueprint $table) {
             $table->string('id_precio')->unique()->nullable(false)->primary();
             $table->float('precio')->nullable(false)->unsigned();
+            $table->foreign('id_producto_precio')->references('id_prod')->on('productos')->onDelete('cascade');
             $table->timestamps();
         });
     }
