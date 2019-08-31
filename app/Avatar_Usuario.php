@@ -11,6 +11,6 @@ class Avatar_Usuario extends Model
 	protected $fillable = ['avatar'];
 
 	public function usuario(){
-		return $this->belongsTo('App\Usuario');
+		return $this->belongsTo('App\Usuario','id_usuario_avatar','id_cl');
 	}
 }
