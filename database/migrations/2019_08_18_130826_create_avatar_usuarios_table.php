@@ -16,6 +16,7 @@ class CreateAvatarUsuariosTable extends Migration
         Schema::create('avatar_usuarios', function (Blueprint $table) {
             $table->string('id_avatar')->unique()->nullable(false)->primary();
             $table->string('avatar');
+            $table->string('id_usuario_avatar');
             $table->foreign('id_usuario_avatar')->references('id_cl')->on('usuarios')->onDelete('cascade');
             $table->timestamps();
         });

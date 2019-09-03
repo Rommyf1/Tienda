@@ -17,6 +17,7 @@ class CreateContactoUsuariosTable extends Migration
             $table->string('id_contacto')->unique()->primary()->nullable(false);
             $table->string('email')->unique()->nullable(false);
             $table->string('telefono',15)->unique()->nullable();
+            $table->string('id_usuario_contacto');
             $table->foreign('id_usuario_contacto')->references('id_cl')->on('usuarios')->onDelete('cascade');
             $table->timestamps();
         });
